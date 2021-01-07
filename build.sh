@@ -1,5 +1,5 @@
 #!/bin/bash
 docker build ./docker \
-  -t aoirint/joplin-docker-proxy \
+  -t aoirint/transproxy \
   --build-arg HTTP_PROXY \
   --build-arg HTTPS_PROXY
