@@ -24,6 +24,12 @@ jobs:
         with:
           args: build -t aoirint/transproxy:${IMAGE_TAG} ./docker/
 
+      - name: Build :tag-node
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: build -t aoirint/transproxy:${IMAGE_TAG}-node --build-arg BASE_IMAGE=node:12 ./docker/
+
       - name: Build :latest
         if: success()
         uses: actions-hub/docker@master
@@ -35,6 +41,12 @@ jobs:
         uses: actions-hub/docker@master
         with:
           args: push aoirint/transproxy:${IMAGE_TAG}
+
+      - name: Deploy :tag-node
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push aoirint/transproxy:${IMAGE_TAG}-node
 
       - name: Deploy :latest
         if: success()

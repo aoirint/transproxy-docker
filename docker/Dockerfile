@@ -1,4 +1,5 @@
-FROM ubuntu:bionic
+ARG BASE_IMAGE=ubuntu:bionic
+FROM ${BASE_IMAGE}
 
 ARG HTTP_PROXY
 ARG HTTPS_PROXY
