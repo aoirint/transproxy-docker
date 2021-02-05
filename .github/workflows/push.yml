@@ -28,13 +28,13 @@ jobs:
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: build -t aoirint/transproxy:${IMAGE_TAG}-node --build-arg BASE_IMAGE=node:12 ./docker/
+          args: build -t aoirint/transproxy:${IMAGE_TAG}-node --build-arg BASE_IMAGE=node:12-alpine ./docker/
 
       - name: Build :node
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: build -t aoirint/transproxy:node --build-arg BASE_IMAGE=node:12 ./docker/
+          args: build -t aoirint/transproxy:node --build-arg BASE_IMAGE=node:12-alpine ./docker/
 
       - name: Build :latest
         if: success()

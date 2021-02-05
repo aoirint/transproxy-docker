@@ -4,4 +4,5 @@ docker run --rm -it \
   -e HTTPS_PROXY \
   --cap-add=NET_ADMIN \
   aoirint/transproxy \
-  bash
+  /bin/ash
+
