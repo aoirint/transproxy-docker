@@ -1,5 +1,5 @@
-#!/bin/ash
+#!/bin/sh
 
-ash -c "transproxy -dns-over-https-enabled >/dev/null 2>&1" &
+sh -c "transproxy -dns-over-https-enabled >/dev/null 2>&1" &
 
 exec "$@"

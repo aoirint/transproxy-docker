@@ -1,8 +1,9 @@
-ARG BASE_IMAGE=alpine:3
-FROM ${BASE_IMAGE}
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE:-alpine:3}
 
 ARG HTTP_PROXY
 ARG HTTPS_PROXY
+ARG NO_PROXY
 ARG TRANSPROXY_URL=https://github.com/wadahiro/go-transproxy/releases/download/v0.5.2/go-transproxy-0.5.2.tar.gz
 
 RUN apk add --no-cache \
